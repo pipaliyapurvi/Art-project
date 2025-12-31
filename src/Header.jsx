@@ -124,11 +124,8 @@ function Header() {
 
                         {/* ===== Login / Signup Buttons (Desktop) ===== */}
                         <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 1, ml: 2 }}>
-                            <Button variant="outlined" size="small">
-                                Login
-                            </Button>
                             <Button variant="contained" size="small">
-                                Sign Up
+                                Login
                             </Button>
                         </Box>
 
@@ -168,13 +165,10 @@ function Header() {
 
                     <Divider />
 
-                    {/* Login / Signup Mobile */}
+                    {/* Login /  */}
                     <Box sx={{ p: 2 }} className="btn">
-                        <Button fullWidth variant="outlined" sx={{ mb: 1}} className='login'>
-                            Login
-                        </Button>
                         <Button fullWidth variant="contained">
-                            Sign Up
+                            Login
                         </Button>
                     </Box>
 

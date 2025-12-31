@@ -91,8 +91,8 @@ const Hero = () => {
                                             px: 4,
                                             py: 1.5,
                                             borderRadius: "30px",
-                                            backgroundColor: "#ff6b6b",
-                                            "&:hover": { backgroundColor: "#ff4757" },
+                                            backgroundColor: "#90caf9",
+                                            "&:hover": { backgroundColor: "#90caf9" },
                                         }}
                                     >
                                         Explore Art
@@ -107,8 +107,8 @@ const Hero = () => {
                                             color: "#fff",
                                             borderColor: "#fff",
                                             "&:hover": {
-                                                borderColor: "#ff6b6b",
-                                                color: "#ff6b6b",
+                                                borderColor: "#90caf9",
+                                                color: "#90caf9",
                                             },
                                         }}
                                     >

@@ -38,8 +38,6 @@ const ArtArticles = () => {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
-    const cardWidth = isMobile ? "90vw" : `calc((100vw - 96px) / 3)`;
-
     return (
         <Box
             component="section"
@@ -58,13 +56,15 @@ const ArtArticles = () => {
                 >
                     FEATURED ARTICLES
                 </Typography>
+
                 <Typography
                     variant={isMobile ? "h4" : "h3"}
                     component="h2"
-                    sx={{ fontWeight: 700, mt: 1 }}
+                    sx={{ fontWeight: 700, mt: 1, fontFamily: 'serif' }}
                 >
                     Explore Our Latest Art Stories
                 </Typography>
+
                 <Divider
                     sx={{
                         width: 64,
@@ -80,11 +80,12 @@ const ArtArticles = () => {
             {/* Articles Cards */}
             <Box
                 sx={{
-                    display: "flex",
-                    justifyContent: "center",
+                    display: "grid",
+                    gridTemplateColumns: {
+                        xs: "1fr",
+                        md: "repeat(3, 1fr)",
+                    },
                     gap: 3,
-                    flexWrap: isMobile ? "wrap" : "nowrap",
-                    overflowX: "hidden",
                 }}
             >
                 {articles.map((item, index) => (
@@ -93,10 +94,8 @@ const ArtArticles = () => {
                         sx={{
                             backgroundColor: "#111",
                             color: "#fff",
-                            width: cardWidth,
                             display: "flex",
                             flexDirection: "column",
-                            flexShrink: 0,
                             boxShadow:
                                 "0 4px 20px rgba(144, 202, 249, 0.2), 0 0 10px rgba(144, 202, 249, 0.1)",
                             transition: "transform 0.3s ease",
@@ -107,21 +106,27 @@ const ArtArticles = () => {
                             },
                         }}
                     >
-                        <Box sx={{ overflow: "hidden" }}>
-                            <CardMedia
-                                component="img"
-                                src={item.image}
-                                alt={item.title}
-                                sx={{
-                                    width: "100%",
-                                    height: "auto",
-                                    display: "block",
-                                }}
-                            />
-                        </Box>
+                        <CardMedia
+                            component="img"
+                            image={item.image}
+                            alt={item.title}
+                            sx={{
+                                width: "100%",
+                                height: "auto",
+                                display: "block",
+                            }}
+                        />
 
-                        <CardContent sx={{ flexGrow: 1 }}>
-                            <Typography variant="body2" sx={{ color: "#aaa", mb: 1 }}>
+                        <CardContent
+                            sx={{
+                                flexGrow: 1,
+                                minWidth: 0, // ⭐ IMPORTANT FIX
+                            }}
+                        >
+                            <Typography
+                                variant="body2"
+                                sx={{ color: "#aaa", mb: 1 }}
+                            >
                                 {item.date}
                             </Typography>
 
@@ -131,7 +136,12 @@ const ArtArticles = () => {
                                     fontWeight: 600,
                                     lineHeight: 1.4,
                                     mb: 3,
+                                    overflowWrap: "anywhere",
                                     wordBreak: "break-word",
+                                    display: "-webkit-box",
+                                    WebkitLineClamp: 3,
+                                    WebkitBoxOrient: "vertical",
+                                    overflow: "hidden",
                                 }}
                             >
                                 {item.title}
