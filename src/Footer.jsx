@@ -4,7 +4,6 @@ import {
     Grid,
     Typography,
     TextField,
-    Button,
     IconButton,
     Stack,
 } from "@mui/material";
@@ -15,18 +14,24 @@ const Footer = () => {
         <Box
             component="footer"
             sx={{
-                backgroundColor: "#121212",
+                background: "linear-gradient(180deg, #1a1a1a 0%, #121212 100%)",
                 color: "#fff",
                 px: { xs: 3, md: 10 },
-                py: 8,
+                py: { xs: 6, md: 10 },
             }}
         >
-            {/* Single Row Grid with 3 columns */}
-            <Grid container spacing={4} alignItems="flex-start">
-                {/* LEFT - Newsletter */}
-                <Grid item xs={12} md={4}>
-                    <Typography variant="h6" fontWeight={700} mb={3}>
-                        Sign Up For Our Newsletter And Receive 16% Off Your Next Order
+            <Grid container spacing={6}>
+                {/* Newsletter */}
+                <Grid item xs={12} md={3}>
+                    <Typography
+                        fontSize={20}
+                        fontWeight={700}
+                        lineHeight={1.4}
+                        mb={4}
+                    >
+                        Sign Up For Our Newsletter And Receive
+                        <br />
+                        16% Off Your Next Order
                     </Typography>
 
                     <Stack direction="row" spacing={2} alignItems="center">
@@ -37,17 +42,22 @@ const Footer = () => {
                             InputProps={{
                                 sx: {
                                     color: "#fff",
-                                    borderColor: "#555",
                                 },
                             }}
                             sx={{
-                                "& fieldset": { borderColor: "#555" },
+                                "& fieldset": {
+                                    borderColor: "#90caf9",
+                                },
+                                "&:hover fieldset": {
+                                    borderColor: "#aaa",
+                                },
                             }}
                         />
+
                         <IconButton
                             sx={{
+                                border: "1px solid #90caf9",
                                 color: "#fff",
-                                border: "1px solid #555",
                                 p: 1.5,
                             }}
                         >
@@ -56,57 +66,64 @@ const Footer = () => {
                     </Stack>
                 </Grid>
 
-                {/* CENTER - Brand & Description */}
-                <Grid item xs={12} md={4}>
-                    <Typography variant="h5" fontWeight={700} mb={3}>
-                        One Art
-                    </Typography>
-                    <Typography color="#bbb" lineHeight={1.7}>
-                        Through colors, flowing lines, art uncovers the hidden emotions our
-                        hearts quietly hold. What words may hide, a painting boldly
-                        expresses through every shade.
+                {/* Brand */}
+                <Grid item xs={12} md={3}>
+                    <Stack direction="row" spacing={2} alignItems="center" mb={3}>
+                        {/* Logo Placeholder */}
+
+
+                        <Typography variant="h5" fontWeight={700}>
+                            Art Strick
+                        </Typography>
+                    </Stack>
+
+                    <Typography color="#bbb" lineHeight={1.8}>
+                        Through colors, flowing lines, art <br />uncovers the hidden emotions our
+                        hearts <br />quietly hold. What words may hide, a <br /> painting boldly
+                        expresses through every <br />shade.
                     </Typography>
                 </Grid>
 
-                {/* RIGHT - Quick Links & Shop */}
-                <Grid item xs={12} md={4}>
-                    <Grid container spacing={4}>
-                        <Grid item xs={6}>
-                            <Typography fontWeight={700} mb={2}>
-                                Quick Links
-                            </Typography>
-                            <Stack spacing={1} color="#bbb">
-                                <Typography>Download App</Typography>
-                                <Typography>About Us</Typography>
-                                <Typography>Exhibitions</Typography>
-                                <Typography>Blogs</Typography>
-                                <Typography>Contact</Typography>
-                            </Stack>
-                        </Grid>
-                        <Grid item xs={6}>
-                            <Typography fontWeight={700} mb={2}>
-                                Shop
-                            </Typography>
-                            <Stack spacing={1} color="#bbb">
-                                <Typography>All Wall Art</Typography>
-                                <Typography>Under $500</Typography>
-                                <Typography>Oil Painting</Typography>
-                                <Typography>Pencil Art</Typography>
-                                <Typography>Sculpture</Typography>
-                            </Stack>
-                        </Grid>
-                    </Grid>
+                {/* Quick Links */}
+                <Grid item xs={12} md={3}>
+                    <Typography fontWeight={700} mb={3}>
+                        Quick Links
+                    </Typography>
+
+                    <Stack spacing={1.5} color="#bbb">
+                        <Typography>Download App</Typography>
+                        <Typography>Shop</Typography>
+                        <Typography>Collection</Typography>
+                        <Typography>Blogs</Typography>
+                        <Typography>Contact</Typography>
+                    </Stack>
+                </Grid>
+
+                {/* Shop */}
+                <Grid item xs={12} md={3}>
+                    <Typography fontWeight={700} mb={3}>
+                        Shop
+                    </Typography>
+
+                    <Stack spacing={1.5} color="#bbb">
+                        <Typography>All Wall Art</Typography>
+                        <Typography>Under $500</Typography>
+                        <Typography>Oil Painting</Typography>
+                        <Typography>Pencil Art</Typography>
+                        <Typography>Sculpture</Typography>
+                    </Stack>
                 </Grid>
             </Grid>
 
-            {/* Bottom copyright */}
+            {/* Bottom */}
             <Box
                 sx={{
                     borderTop: "1px solid #333",
-                    mt: 6,
+                    mt: 8,
                     pt: 3,
                     textAlign: "center",
                     color: "#777",
+                    fontSize: 14,
                 }}
             >
                 © {new Date().getFullYear()} One Art. All rights reserved.

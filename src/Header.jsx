@@ -25,13 +25,14 @@ import ArticleIcon from '@mui/icons-material/Article';
 import ContactMailIcon from '@mui/icons-material/ContactMail';
 import { styled, alpha } from '@mui/material/styles';
 
-// ================= Styled Components =================
+
+/* ================= Styled Components ================= */
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
     borderRadius: theme.shape.borderRadius,
-    backgroundColor: alpha(theme.palette.common.white, 0.15),
+    backgroundColor: alpha('#fff', 0.15),
     '&:hover': {
-        backgroundColor: alpha(theme.palette.common.white, 0.25),
+        backgroundColor: alpha('#fff', 0.25),
     },
     marginRight: theme.spacing(2),
     display: 'none',
@@ -46,10 +47,11 @@ const SearchIconWrapper = styled('div')(({ theme }) => ({
     height: '100%',
     display: 'flex',
     alignItems: 'center',
+    color: '#fff',
 }));
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
-    color: 'inherit',
+    color: '#fff',
     '& .MuiInputBase-input': {
         paddingLeft: `calc(1em + ${theme.spacing(4)})`,
         width: '20ch',
@@ -60,11 +62,11 @@ const CartBadge = styled(Badge)(({ theme }) => ({
     '& .MuiBadge-badge': {
         right: -3,
         top: 8,
-        border: `2px solid ${theme.palette.background.paper}`,
+        border: `2px solid #000`,
     },
 }));
 
-// ================= Header Component =================
+/* ================= Header Component ================= */
 function Header() {
     const [drawerOpen, setDrawerOpen] = useState(false);
     const cartItems = 3;
@@ -79,19 +81,23 @@ function Header() {
 
     return (
         <>
-            <AppBar position="static" sx={{ backgroundColor: 'white', color: 'black' }}>
+            <AppBar position="static" sx={{ backgroundColor: '#000', color: '#fff' }}>
                 <Toolbar sx={{ minHeight: 70 }}>
 
                     {/* Logo */}
                     <Box sx={{ display: 'flex', alignItems: 'center', mr: 3 }}>
-                        <Typography className="logo">Art</Typography>
-                        <Typography className="logo-1">Strick</Typography>
+                        <Typography sx={{ fontWeight: 700, color: '#fff' }}>Art</Typography>
+                        <Typography sx={{ ml: 0.5, color: '#fff' }}>Strick</Typography>
                     </Box>
+
 
                     {/* Menu Desktop */}
                     <Box sx={{ display: { xs: 'none', md: 'flex' }, flexGrow: 1, gap: 4 }}>
                         {menuItems.map(item => (
-                            <Typography key={item.text} sx={{ cursor: 'pointer' }}>
+                            <Typography
+                                key={item.text}
+                                sx={{ cursor: 'pointer', color: '#fff' }}
+                            >
                                 {item.text}
                             </Typography>
                         ))}
@@ -108,30 +114,33 @@ function Header() {
                     {/* Right Icons */}
                     <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
 
-                        <IconButton sx={{ display: { xs: 'flex', md: 'none' } }}>
+                        <IconButton sx={{ display: { xs: 'flex', md: 'none' }, color: '#fff' }}>
                             <SearchIcon />
                         </IconButton>
 
-                        <IconButton sx={{ display: { xs: 'none', sm: 'flex' } }}>
+                        <IconButton sx={{ display: { xs: 'none', sm: 'flex' }, color: '#fff' }}>
                             <PermIdentityIcon />
                         </IconButton>
 
-                        <IconButton>
+                        <IconButton sx={{ color: '#fff' }}>
                             <CartBadge badgeContent={cartItems} color="primary">
                                 <ShoppingCartIcon />
                             </CartBadge>
                         </IconButton>
 
-                        {/* ===== Login / Signup Buttons (Desktop) ===== */}
-                        <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 1, ml: 2 }}>
-                            <Button variant="contained" size="small">
+                        <Box sx={{ display: { xs: 'none', md: 'flex' }, ml: 2 }}>
+                            <Button
+                                variant="outlined"
+                                size="small"
+                                sx={{ color: '#fff', borderColor: '#fff' }}
+                            >
                                 Login
                             </Button>
                         </Box>
 
                         {/* Mobile Menu */}
                         <IconButton
-                            sx={{ display: { md: 'none' } }}
+                            sx={{ display: { md: 'none' }, color: '#fff' }}
                             onClick={() => setDrawerOpen(true)}
                         >
                             <MenuIcon />
@@ -143,30 +152,29 @@ function Header() {
 
             {/* ================= Drawer (Mobile) ================= */}
             <Drawer anchor="right" open={drawerOpen} onClose={() => setDrawerOpen(false)}>
-                <Box sx={{ width: 280 }}>
+                <Box sx={{ width: 280, backgroundColor: '#111', height: '100%', color: '#fff' }}>
 
                     <Box sx={{ display: 'flex', justifyContent: 'space-between', p: 2 }}>
                         <Typography variant="h6">Menu</Typography>
-                        <IconButton onClick={() => setDrawerOpen(false)}>
+                        <IconButton sx={{ color: '#fff' }} onClick={() => setDrawerOpen(false)}>
                             <CloseIcon />
                         </IconButton>
                     </Box>
 
-                    <Divider />
+                    <Divider sx={{ backgroundColor: '#333' }} />
 
                     <List>
                         {menuItems.map(item => (
                             <ListItem button key={item.text}>
-                                <ListItemIcon>{item.icon}</ListItemIcon>
+                                <ListItemIcon sx={{ color: '#fff' }}>{item.icon}</ListItemIcon>
                                 <ListItemText primary={item.text} />
                             </ListItem>
                         ))}
                     </List>
 
-                    <Divider />
+                    <Divider sx={{ backgroundColor: '#333' }} />
 
-                    {/* Login /  */}
-                    <Box sx={{ p: 2 }} className="btn">
+                    <Box sx={{ p: 2 }}>
                         <Button fullWidth variant="contained">
                             Login
                         </Button>

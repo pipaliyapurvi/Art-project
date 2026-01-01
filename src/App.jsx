@@ -9,6 +9,8 @@ import Footer from './Footer';
 
 
 
+
+
 function App() {
   return (
     <>
@@ -18,6 +20,9 @@ function App() {
       <ArtArticles></ArtArticles>
       <ArtistPrograms></ArtistPrograms>
       <Footer></Footer>
+   
+
+
     </>
   );
 }
