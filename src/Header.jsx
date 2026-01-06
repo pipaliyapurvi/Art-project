@@ -101,12 +101,12 @@ function Header() {
                 p: 5,
             }}
         >
-            <Typography variant="h3" sx={{ mb: 3, color: '#90caf9',fontWeight:'700' }}>
+            <Typography variant="h3" sx={{ mb: 3, color: '#90caf9', fontWeight: '700' }}>
                 Login
             </Typography>
 
             {/* Tabs */}
-            
+
 
             {/* Forms */}
             {authPage === 'login' && (

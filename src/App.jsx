@@ -6,6 +6,7 @@ import Showcases from './Showcases';
 import ArtArticles from './ArtArticles';
 import ArtistPrograms from './ArtistPrograms';
 import Footer from './Footer';
+import Shoppg from './Shoppg';
 
 
 
@@ -14,13 +15,15 @@ import Footer from './Footer';
 function App() {
   return (
     <>
-      <Header></Header>
+      {/* <Header></Header>
       <Hero></Hero>
       <Showcases></Showcases>
       <ArtArticles></ArtArticles>
       <ArtistPrograms></ArtistPrograms>
-      <Footer></Footer>
-   
+      <Footer></Footer> */}
+      <Shoppg></Shoppg>
+
+
 
 
     </>

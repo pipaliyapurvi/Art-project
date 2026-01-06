@@ -14,14 +14,31 @@ const slides = [
     {
         title: "Creative Visual Stories",
         desc: "Art that speaks emotions and imagination.",
-        image: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
+        image: "https://images.unsplash.com/photo-1549880338-65ddcdfd017b",
     },
     {
         title: "Inspired by Colors",
         desc: "Unique handmade & digital artworks.",
-        image: "https://images.unsplash.com/photo-1496317899792-9d7dbcd928a1",
+        image: "https://images.unsplash.com/photo-1513364776144-60967b0f800f",
     },
 ];
+// const slides = [
+//     {
+//         title: "Where Art Comes Alive",
+//         desc: "Discover expressive paintings and modern visual stories.",
+//         image: "https://images.unsplash.com/photo-1541963463532-d68292c34b19",
+//     },
+//     {
+//         title: "Creative Visual Stories",
+//         desc: "Handcrafted and digital art inspired by imagination.",
+//         image: "https://images.unsplash.com/photo-1513364776144-60967b0f800f",
+//     },
+//     {
+//         title: "Inspired by Colors",
+//         desc: "Minimal, modern and timeless artworks.",
+//         image: "https://images.unsplash.com/photo-1549880338-65ddcdfd017b",
+//     },
+// ];
 
 const Hero = () => {
     let sliderRef = null;

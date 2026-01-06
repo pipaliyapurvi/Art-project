@@ -1,29 +1,94 @@
 import React from 'react';
-import { Box, Typography, TextField, Button } from '@mui/material';
+import { Box, Typography, TextField, Button, Paper } from '@mui/material';
 
 const Login = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Add your login logic here
         alert('Login submitted!');
     };
 
     return (
         <Box
             sx={{
+                minHeight: '100vh',
+                backgroundColor: '#000',
                 display: 'flex',
-                flexDirection: 'column',
                 alignItems: 'center',
                 justifyContent: 'center',
-                height: '100vh',
             }}
         >
-            <Typography variant="h4" mb={2}>Login</Typography>
-            <Box component="form" onSubmit={handleSubmit} sx={{ display: 'flex', flexDirection: 'column', gap: 2, width: '300px' }}>
-                <TextField label="Email" variant="outlined" required />
-                <TextField label="Password" type="password" variant="outlined" required />
-                <Button type="submit" variant="contained">Login</Button>
-            </Box>
+            <Paper
+                elevation={6}
+                sx={{
+                    p: 4,
+                    width: 350,
+                    borderRadius: 3,
+                    backgroundColor: '#111',
+                }}
+            >
+                <Typography
+                    variant="h4"
+                    textAlign="center"
+                    mb={3}
+                    sx={{ color: '#fff', fontWeight: 'bold' }}
+                >
+                    Login
+                </Typography>
+
+                <Box
+                    component="form"
+                    onSubmit={handleSubmit}
+                    sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
+                >
+                    <TextField
+                        label="Email"
+                        variant="outlined"
+                        required
+                        InputLabelProps={{ style: { color: '#aaa' } }}
+                        InputProps={{ style: { color: '#fff' } }}
+                        sx={{
+                            '& .MuiOutlinedInput-root fieldset': {
+                                borderColor: '#444',
+                            },
+                            '& .MuiOutlinedInput-root:hover fieldset': {
+                                borderColor: '#90caf9',
+                            },
+                        }}
+                    />
+
+                    <TextField
+                        label="Password"
+                        type="password"
+                        variant="outlined"
+                        required
+                        InputLabelProps={{ style: { color: '#aaa' } }}
+                        InputProps={{ style: { color: '#fff' } }}
+                        sx={{
+                            '& .MuiOutlinedInput-root fieldset': {
+                                borderColor: '#444',
+                            },
+                            '& .MuiOutlinedInput-root:hover fieldset': {
+                                borderColor: '#90caf9',
+                            },
+                        }}
+                    />
+
+                    <Button
+                        type="submit"
+                        variant="contained"
+                        sx={{
+                            mt: 1,
+                            py: 1.2,
+                            borderRadius: '25px',
+                            backgroundColor: '#90caf9',
+                            fontWeight: 'bold',
+                            '&:hover': { backgroundColor: '#64b5f6' },
+                        }}
+                    >
+                        Login
+                    </Button>
+                </Box>
+            </Paper>
         </Box>
     );
 };
