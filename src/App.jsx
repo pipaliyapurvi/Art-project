@@ -7,10 +7,7 @@ import ArtArticles from './ArtArticles';
 import ArtistPrograms from './ArtistPrograms';
 import Footer from './Footer';
 import Shoppg from './Shoppg';
-
-
-
-
+import Categorypg from './Categorypg';
 
 function App() {
   return (
@@ -22,10 +19,7 @@ function App() {
       <ArtistPrograms></ArtistPrograms>
       <Footer></Footer> */}
       <Shoppg></Shoppg>
-
-
-
-
+      {/* <Categorypg></Categorypg> */}
     </>
   );
 }

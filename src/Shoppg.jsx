@@ -61,6 +61,31 @@ const artworks = [
     },
 
 ];
+const artData = [
+    {
+        title: "Frida Kahlo Cat love’s",
+        artist: "Frida Kahlo",
+        price: 200,
+        image:
+            "	https://demo.egenslab.com/html/artmart/preview/assets/img/inner-page/auction-details-img7.jpg",
+    },
+    {
+        title: "A masterpiece that invites you to dream",
+        artist: "Frida Kahlo",
+        price: 200,
+        image:
+            "	https://demo.egenslab.com/html/artmart/preview/assets/img/home1/general-art-img6.jpg",
+    },
+    {
+        title: "More than just art—it's a feeling",
+        artist: "Frida Kahlo",
+        price: 200,
+        image:
+            "https://demo.egenslab.com/html/artmart/preview/assets/img/inner-page/auction-details-img3.jpg",
+    },
+
+];
+
 
 
 const Shoppg = () => {
@@ -96,7 +121,7 @@ const Shoppg = () => {
             </Box>
 
             {/* MAIN SECTION */}
-            <Box sx={{ bgcolor: "#0e0e0e", color: "#fff", py: 6 }}>
+            <Box sx={{ bgcolor: "#0e0e0e", color: "#fff", py: 6, mb: "5px" }}>
                 <Container maxWidth="xl">
                     <Grid container spacing={4}>
                         {/* LEFT SIDEBAR */}
@@ -263,11 +288,88 @@ const Shoppg = () => {
                                     </Grid>
                                 ))}
                             </Grid>
+                            <Grid container spacing={3}>
+                                {artData.map((art, index) => (
+                                    <Grid item xs={12} sm={6} md={4} key={index}>
+                                        <Card sx={{ bgcolor: "#1a1a1a", color: "#fff", mb: "90px" }}>
+                                            <Box sx={{ position: "relative" }}>
+                                                <CardMedia
+                                                    component="img"
+                                                    height="260"
+                                                    image={art.image}
+                                                />
+
+                                                <Box
+                                                    sx={{
+                                                        position: "absolute",
+                                                        top: 10,
+                                                        left: 10,
+                                                        bgcolor: "red",
+                                                        px: 1,
+                                                        py: 0.5,
+                                                        borderRadius: 1,
+                                                        fontSize: 12,
+                                                    }}
+                                                >
+                                                    Live
+                                                </Box>
+
+                                                <IconButton
+                                                    sx={{
+                                                        position: "absolute",
+                                                        top: 10,
+                                                        right: 10,
+                                                        color: "#fff",
+                                                    }}
+                                                >
+                                                    <FavoriteBorderIcon />
+                                                </IconButton>
+                                            </Box>
+
+                                            <Box
+                                                sx={{
+                                                    bgcolor: "#000",
+                                                    textAlign: "center",
+                                                    py: 1,
+                                                    fontSize: 13,
+                                                }}
+                                            >
+                                                00D : 00H : 00M : 00Sec
+                                            </Box>
+
+                                            <CardContent>
+                                                <Typography fontWeight={600}>
+                                                    {art.title}
+                                                </Typography>
+                                                <Typography sx={{ color: "#aaa", my: 1 }}>
+                                                    Artist : {art.artist}
+                                                </Typography>
+                                                <Typography>
+                                                    Current Bidding : <b>${art.price}.00</b>
+                                                </Typography>
+
+                                                <Button
+                                                    fullWidth
+                                                    variant="outlined"
+                                                    sx={{
+                                                        mt: 2,
+                                                        color: "#fff",
+                                                        borderColor: "#555",
+                                                    }}
+                                                >
+                                                    Bidding Start
+                                                </Button>
+                                            </CardContent>
+                                        </Card>
+                                    </Grid>
+                                ))}
+                            </Grid>
                         </Grid>
                     </Grid>
                 </Container>
             </Box>
             <Footer></Footer>
+
         </>
     );
 };

@@ -76,7 +76,7 @@ function Header() {
     const menuItems = [
         { text: 'Home', icon: <HomeIcon /> },
         { text: 'Shop', icon: <StoreIcon /> },
-        { text: 'Collection', icon: <CategoryIcon /> },
+        { text: 'Category', icon: <CategoryIcon /> },
         { text: 'Blog', icon: <ArticleIcon /> },
         { text: 'Contact', icon: <ContactMailIcon /> },
     ];
