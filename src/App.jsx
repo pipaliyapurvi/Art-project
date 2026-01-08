@@ -8,6 +8,8 @@ import ArtistPrograms from './ArtistPrograms';
 import Footer from './Footer';
 import Shoppg from './Shoppg';
 import Categorypg from './Categorypg';
+import Blogpg from './Blogpg';
+import Contactpg from './Contactpg';
 
 function App() {
   return (
@@ -18,8 +20,10 @@ function App() {
       <ArtArticles></ArtArticles>
       <ArtistPrograms></ArtistPrograms>
       <Footer></Footer> */}
-      <Shoppg></Shoppg>
-      {/* <Categorypg></Categorypg> */}
+      {/* <Shoppg></Shoppg> */}
+      <Categorypg></Categorypg>
+      {/* <Blogpg></Blogpg> */}
+      {/* <Contactpg></Contactpg> */}
     </>
   );
 }

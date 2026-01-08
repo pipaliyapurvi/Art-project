@@ -1,98 +1,139 @@
 import React from "react";
 import {
     Box,
-    Card,
-    CardContent,
-    CardMedia,
-    Typography,
-    Grid,
     Container,
+    Typography,
+    Button,
+    Grid,
+    Stack,
 } from "@mui/material";
-
-const collections = [
-    {
-        id: 1,
-        title: "Abstract Art",
-        image: "https://source.unsplash.com/400x300/?abstract,art",
-        description: "Modern abstract artwork collection",
-    },
-    {
-        id: 2,
-        title: "Landscape Art",
-        image: "https://source.unsplash.com/400x300/?landscape,painting",
-        description: "Beautiful nature and landscape paintings",
-    },
-    {
-        id: 3,
-        title: "Portrait Art",
-        image: "https://source.unsplash.com/400x300/?portrait,art",
-        description: "Creative portrait art collection",
-    },
-    {
-        id: 4,
-        title: "Modern Art",
-        image: "https://source.unsplash.com/400x300/?modern,art",
-        description: "Latest modern art designs",
-    },
-];
+import Header from "./Header";
+import Footer from "./Footer";
 
 const Categorypg = () => {
     return (
-        <Box sx={{ py: 6, backgroundColor: "#f9f9f9" }}>
-            <Container>
-                {/* Page Title */}
-                <Typography
-                    variant="h4"
-                    align="center"
-                    fontWeight="bold"
-                    gutterBottom
-                >
-                    Our Art Collections
-                </Typography>
-
-                <Typography
-                    variant="subtitle1"
-                    align="center"
-                    color="text.secondary"
-                    mb={5}
-                >
-                    Explore our exclusive art collections
-                </Typography>
-
-                {/* Collection Grid */}
-                <Grid container spacing={4}>
-                    {collections.map((item) => (
-                        <Grid item xs={12} sm={6} md={3} key={item.id}>
-                            <Card
-                                sx={{
-                                    height: "100%",
-                                    transition: "0.3s",
-                                    "&:hover": {
-                                        transform: "translateY(-8px)",
-                                        boxShadow: 6,
-                                    },
-                                }}
-                            >
-                                <CardMedia
-                                    component="img"
-                                    height="200"
-                                    image={item.image}
-                                    alt={item.title}
-                                />
-                                <CardContent>
-                                    <Typography variant="h6" fontWeight="bold">
-                                        {item.title}
+        <>
+            <Header></Header>
+            <Box
+                sx={{
+                    backgroundColor: "#1a1a1a",
+                    color: "#fff",
+                    py: { xs: 8, md: 14 },
+                }}
+            >
+                <Container maxWidth="lg">
+                    <Grid container spacing={6} alignItems="center">
+                        {/* LEFT CONTENT */}
+                        <Grid item xs={12} md={6}>
+                            <Stack spacing={3}>
+                                <Box
+                                    sx={{
+                                        display: "inline-block",
+                                        border: "1px solid #555",
+                                        borderRadius: "20px",
+                                        px: 2.5,
+                                        py: 0.6,
+                                        width: "fit-content",
+                                    }}
+                                >
+                                    <Typography variant="body2">
+                                        Explore Exclusive Collections
                                     </Typography>
-                                    <Typography variant="body2" color="text.secondary">
-                                        {item.description}
-                                    </Typography>
-                                </CardContent>
-                            </Card>
+                                </Box>
+
+                                <Typography
+                                    variant="h2"
+                                    sx={{
+                                        fontWeight: 700,
+                                        fontFamily: "serif",
+                                        lineHeight: 1.2,
+                                    }}
+                                >
+                                    Discover, Bid, and Collect <br />
+                                    Art from Around the <br />
+                                    World
+                                </Typography>
+
+                                <Typography
+                                    variant="body1"
+                                    sx={{ color: "#cfcfcf", maxWidth: 480 }}
+                                >
+                                    Unlock a world of imagination with our curated collection of
+                                    original artworks.
+                                </Typography>
+
+                                <Button
+                                    variant="contained"
+                                    sx={{
+                                        backgroundColor: "#fff",
+                                        color: "#000",
+                                        width: "fit-content",
+                                        px: 4,
+                                        py: 1.4,
+                                        borderRadius: 1,
+                                        fontWeight: 600,
+                                        "&:hover": {
+                                            backgroundColor: "#e6e6e6",
+                                        },
+                                    }}
+                                >
+                                    Explore Auctions
+                                </Button>
+                            </Stack>
                         </Grid>
-                    ))}
-                </Grid>
-            </Container>
-        </Box>
+
+                        {/* RIGHT IMAGES */}
+                        <Grid item xs={12} md={6}>
+                            <Grid container spacing={2}>
+                                <Grid item xs={7}>
+                                    <Box
+                                        component="img"
+                                        src="https://i.imgur.com/5ZQ0Z5S.jpg"
+                                        alt="art-1"
+                                        sx={{
+                                            width: "100%",
+                                            borderRadius: 1,
+                                            height: "100%",
+                                            objectFit: "cover",
+                                        }}
+                                    />
+                                </Grid>
+
+                                <Grid item xs={5}>
+                                    <Stack spacing={2}>
+                                        <Box
+                                            component="img"
+                                            src="https://i.imgur.com/IfkqZzU.jpg"
+                                            alt="art-2"
+                                            sx={{
+                                                width: "100%",
+                                                borderRadius: 1,
+                                                height: 220,
+                                                objectFit: "cover",
+                                            }}
+                                        />
+
+                                        <Box
+                                            component="img"
+                                            src="https://i.imgur.com/4AiXzf8.jpg"
+                                            alt="art-3"
+                                            sx={{
+                                                width: "100%",
+                                                borderRadius: 1,
+                                                height: 220,
+                                                objectFit: "cover",
+                                            }}
+                                        />
+                                    </Stack>
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </Container>
+            </Box>
+            <Footer></Footer>
+        </>
+
     );
 };
 
