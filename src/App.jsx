@@ -10,6 +10,13 @@ import Shoppg from './Shoppg';
 import Categorypg from './Categorypg';
 import Blogpg from './Blogpg';
 import Contactpg from './Contactpg';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import Art from './Art';
 
 function App() {
   return (
@@ -21,9 +28,32 @@ function App() {
       <ArtistPrograms></ArtistPrograms>
       <Footer></Footer> */}
       {/* <Shoppg></Shoppg> */}
-      <Categorypg></Categorypg>
+      {/* <Categorypg></Categorypg> */}
       {/* <Blogpg></Blogpg> */}
       {/* <Contactpg></Contactpg> */}
+      <Router>
+
+        <Switch>
+          <Route exact path="/">
+            <Art />
+          </Route>
+          <Route path="/Shop">
+            < Shoppg />
+          </Route>
+          <Route path="/Category">
+            <Categorypg />
+          </Route>
+          <Route path="/Blog">
+            <Blogpg />
+          </Route>
+          <Route path="/Contact">
+            <Contactpg />
+          </Route>
+        </Switch>
+      </Router>
+
+
+
     </>
   );
 }

@@ -207,25 +207,7 @@ const Categorypg = () => {
                                     )}
                                 </Grid>
 
-                                {/* LEARN MORE BUTTON */}
-                                <Button
-                                    sx={{
-                                        width: 120,
-                                        height: 120,
-                                        borderRadius: "50%",
-                                        backgroundColor: "#fff",
-                                        color: "#000",
-                                        fontWeight: 600,
-                                        alignSelf: "flex-start",
-                                        "&:hover": {
-                                            backgroundColor: "#e6e6e6",
-                                        },
-                                    }}
-                                >
-                                    Learn
-                                    <br />
-                                    More
-                                </Button>
+
                             </Stack>
                         </Grid>
 
