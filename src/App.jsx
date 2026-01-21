@@ -14,9 +14,12 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Link,
+
 } from "react-router-dom";
 import Art from './Art';
+import Login from "./Login";
+
 
 function App() {
   return (
@@ -51,6 +54,16 @@ function App() {
           </Route>
         </Switch>
       </Router>
+
+      <Router>
+        <Switch>  
+          <Route path="/login" component={Login} />
+          <Route path="/">
+          </Route>
+        </Switch>
+      </Router>
+
+
 
 
 

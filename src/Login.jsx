@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Box, Typography, TextField, Button, Paper } from '@mui/material';
 
 const Login = () => {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
     const handleSubmit = (e) => {
         e.preventDefault();
         alert('Login submitted!');
+        setEmail('');
+        setPassword('');
     };
 
     return (
@@ -15,76 +20,32 @@ const Login = () => {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
+
+
             }}
         >
-            <Paper
-                elevation={6}
-                sx={{
-                    p: 4,
-                    width: 350,
-                    borderRadius: 3,
-                    backgroundColor: '#111',
-                }}
-            >
-                <Typography
-                    variant="h4"
-                    textAlign="center"
-                    mb={3}
-                    sx={{ color: '#fff', fontWeight: 'bold' }}
-                >
+            <Paper elevation={6} sx={{ p: 4, width: 350, borderRadius: 3, backgroundColor: '#fff', color: '#fff' }}>
+                <Typography variant="h4" textAlign="center" mb={3} sx={{ color: '#000', fontWeight: 'bold' }}>
                     Login
                 </Typography>
 
-                <Box
-                    component="form"
-                    onSubmit={handleSubmit}
-                    sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
-                >
+                <Box component="form" onSubmit={handleSubmit} sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
                     <TextField
                         label="Email"
-                        variant="outlined"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
                         required
-                        InputLabelProps={{ style: { color: '#aaa' } }}
-                        InputProps={{ style: { color: '#fff' } }}
-                        sx={{
-                            '& .MuiOutlinedInput-root fieldset': {
-                                borderColor: '#444',
-                            },
-                            '& .MuiOutlinedInput-root:hover fieldset': {
-                                borderColor: '#90caf9',
-                            },
-                        }}
                     />
 
                     <TextField
                         label="Password"
                         type="password"
-                        variant="outlined"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
                         required
-                        InputLabelProps={{ style: { color: '#aaa' } }}
-                        InputProps={{ style: { color: '#fff' } }}
-                        sx={{
-                            '& .MuiOutlinedInput-root fieldset': {
-                                borderColor: '#444',
-                            },
-                            '& .MuiOutlinedInput-root:hover fieldset': {
-                                borderColor: '#90caf9',
-                            },
-                        }}
                     />
 
-                    <Button
-                        type="submit"
-                        variant="contained"
-                        sx={{
-                            mt: 1,
-                            py: 1.2,
-                            borderRadius: '25px',
-                            backgroundColor: '#90caf9',
-                            fontWeight: 'bold',
-                            '&:hover': { backgroundColor: '#64b5f6' },
-                        }}
-                    >
+                    <Button type="submit" variant="contained">
                         Login
                     </Button>
                 </Box>

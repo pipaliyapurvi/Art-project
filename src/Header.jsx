@@ -8,8 +8,10 @@ import {
     Drawer,
     List,
     ListItem,
-    ListItemText
+    ListItemText,
+    Button
 } from '@mui/material';
+
 
 import SearchIcon from '@mui/icons-material/Search';
 import PermIdentityIcon from '@mui/icons-material/PermIdentity';
@@ -17,6 +19,8 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import MenuIcon from '@mui/icons-material/Menu';
 
 import { Link } from 'react-router-dom';
+import Login from './Login';
+
 
 function Header({ children }) {
     const [drawerOpen, setDrawerOpen] = useState(false);
@@ -48,7 +52,6 @@ function Header({ children }) {
                     >
                         ArtStrick
                     </Typography>
-
                     {/* Desktop Menu */}
                     <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 4 }}>
                         {menuItems.map(item => (
@@ -66,7 +69,6 @@ function Header({ children }) {
                             </Typography>
                         ))}
                     </Box>
-
                     {/* Icons */}
                     <Box sx={{ display: 'flex', gap: 2, ml: 3 }}>
                         <IconButton sx={{ color: '#fff' }}>
@@ -78,6 +80,18 @@ function Header({ children }) {
                         <IconButton sx={{ color: '#fff' }}>
                             <ShoppingCartIcon />
                         </IconButton>
+                        <ListItem
+                            button
+                            component={Link}
+                            to="/login"
+                            onClick={() => setDrawerOpen(false)}
+                        >
+                            <ListItemText
+                                primary="Login"
+                                primaryTypographyProps={{ color: '#fff' }}
+                            />
+                            
+                        </ListItem>
 
                         {/* Mobile Menu Icon */}
                         <IconButton
@@ -114,7 +128,6 @@ function Header({ children }) {
                         ))}
                     </List>
                 </Box>
-                
             </Drawer>
 
             {/* Page Content */}
