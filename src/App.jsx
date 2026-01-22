@@ -20,6 +20,10 @@ import {
 import Art from './Art';
 import Login from "./Login";
 
+import TicketDetails from "./TicketDetails";
+
+
+
 
 function App() {
   return (
@@ -52,16 +56,16 @@ function App() {
           <Route path="/Contact">
             <Contactpg />
           </Route>
+          <Route path="/Login">
+            <Login />
+          </Route>
+          <Route exact path="/" component={Showcases} />
+          <Route path="/tickets/:id" component={TicketDetails} />
+
+
         </Switch>
       </Router>
 
-      <Router>
-        <Switch>  
-          <Route path="/login" component={Login} />
-          <Route path="/">
-          </Route>
-        </Switch>
-      </Router>
 
 
 

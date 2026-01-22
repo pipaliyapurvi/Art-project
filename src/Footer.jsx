@@ -124,9 +124,10 @@ const Footer = () => {
                     textAlign: "center",
                     color: "#777",
                     fontSize: 14,
+
                 }}
             >
-                © {new Date().getFullYear()} One Art. All rights reserved.
+                © {new Date().getFullYear()} Frontend by Pipaliya Purvi
             </Box>
         </Box>
     );

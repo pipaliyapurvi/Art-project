@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Box, Typography, TextField, Button, Paper } from '@mui/material';
+import { Link as RouterLink } from "react-router-dom";
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -47,6 +48,15 @@ const Login = () => {
 
                     <Button type="submit" variant="contained">
                         Login
+                    </Button>
+                    <Button
+                        component={RouterLink}
+                        to="/"
+                        fullWidth
+                        variant="outlined"
+
+                    >
+                        Back to Website
                     </Button>
                 </Box>
             </Paper>

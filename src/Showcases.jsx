@@ -1,6 +1,9 @@
 import { Box, Grid, Typography, Button } from "@mui/material";
+import { useHistory } from "react-router-dom";
 
 const Showcases = () => {
+    const history = useHistory();
+
     return (
         <Box sx={{ px: { xs: 2, md: 8 }, py: 8 }}>
             <Grid container spacing={4}>
@@ -31,6 +34,7 @@ const Showcases = () => {
 
                         <Button
                             variant="text"
+                            onClick={() => history.push("/tickets/3")}
                             sx={{
                                 px: 0,
                                 fontWeight: 600,
@@ -64,9 +68,11 @@ const Showcases = () => {
                         </Typography>
                         <Button
                             variant="text"
+                            onClick={() => history.push("/tickets/3")}
                             sx={{
                                 px: 0,
                                 fontWeight: 600,
+
                                 textTransform: "none",
                             }}
                         >
@@ -127,6 +133,7 @@ const Showcases = () => {
                     </Typography>
                     <Button
                         variant="text"
+                        onClick={() => history.push("/tickets/3")}
                         sx={{
                             px: 0,
                             fontWeight: 600,
